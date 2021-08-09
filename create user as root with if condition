@@ -1,0 +1,30 @@
+#!/bin/bash
+set -xe
+read -p "plaese enter username:" USER_NAME
+echo step-1
+SPEC=@#$%^*
+echo step-2
+SPECCHAR=`echo $SPEC | fold -w1 | shuf | tail -1`
+echo step-3
+PASSWORD=india$SPECCHAR$RANDOM
+echo step-4
+
+EXISTINGUSER=`echo cat \ect\passwd | grep -i $USER_NAME | cut -d ":" -f 1`
+echo step-5
+echo "existing user name is $EXISTINGUSER"
+echo step-6
+if [[ $USER_NAME == $EXISTINGUSER ]]
+then
+echo step-7
+echo "this username is already existing "
+else
+echo "creating new user"
+sleep 3s
+echo step-8
+useradd -m $USER_NAME
+echo step-9
+echo "$PASSWORD | passwd --stadin $USER_NAME"
+echo step-9
+echo " username is USER_NAME and $PASSWORD "
+echo step-10
+fi
