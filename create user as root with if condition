@@ -4,13 +4,14 @@ read -p "plaese enter username:" USER_NAME
 echo step-1
 SPEC=@#$%^*
 echo step-2
-SPECCHAR=`echo $SPEC | fold -w1 | shuf | tail -1`
+SPECCHAR=$(echo $SPEC | fold -w1 | shuf | tail -1)
 echo step-3
 PASSWORD=india$SPECCHAR$RANDOM
 echo step-4
 
-EXISTINGUSER=`echo cat \ect\passwd | grep -i $USER_NAME | cut -d ":" -f 1`
+EXISTINGUSER=$(cat /etc/passwd | grep $USER_NAME | cut -d ":" -f 1)
 echo step-5
+echo $EXISTINGUSER
 echo "existing user name is $EXISTINGUSER"
 echo step-6
 if [[ $USER_NAME == $EXISTINGUSER ]]
