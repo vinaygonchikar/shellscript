@@ -1,0 +1,17 @@
+#!/bin/bash
+set -xe
+read -p "enter username:" USERNAME
+#read -p "enter passwoerd:" PASSWORD
+SPECIALPASS=@#$%^*
+#echo $SPECIALPASS
+SPECIALONE=`echo $SPECIALPASS | fold -w1 | shuf | head -1`
+#echo $SPECIALONE
+SPECIALTWO=`echo $SPECIALPASS | fold -w1 | shuf | head -1`
+#echo $SPECIALTWO
+SPECIALTHREE=$SPECIALONE$RANDOM$SPECIALTWO
+#echo $SPECIALTHREE
+sudo useradd -m ${USERNAME}
+#echo ${PASSWORD} | passwd --stdin ${PASSWORD}
+echo ${SPECIALTHREE} | passwd --stdin ${USERNAME}
+echo "your username is ${USERNAME}"
+echo "your password is ${SPECIALTHREE}"
