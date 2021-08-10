@@ -1,0 +1,21 @@
+#!/bin/bash
+#set -xe
+read -p "select the number with in 5:" NUMBER
+echo $NUMBER
+
+if [[ $NUMBER -eq 1 ]]
+then
+echo "u have optioned for number one"
+elif [[ $NUMBER -eq 2 ]]
+then
+echo "u have optioned for number two"
+elif [[ $NUMBER -eq 3 ]]
+then
+echo "u have optioned for number three"
+elif [[ $NUMBER -eq 4 ]]
+then
+echo "u have optioned for number four"
+elif [[ $NUMBER -eq 5 ]]
+then
+echo "u have optioned for number five"
+fi
