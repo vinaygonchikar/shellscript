@@ -1,0 +1,10 @@
+#!/bin/bash
+#set -xe
+addition () {
+read -p "enetre first number:" NUMB1
+read -p "enetre second number:" NUMB2
+NUMB3=$(($NUMB1+$NUMB2))
+echo "addition of two number is $NUMB3"
+}
+addition
+echo "i think u finished the funchtions"
