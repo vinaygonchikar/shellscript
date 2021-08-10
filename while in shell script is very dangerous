@@ -1,0 +1,11 @@
+#!/bin/bash
+set -x
+read -p "enter the number one:" NUMBER
+#echo $NUMBER
+while [[ ${NUMBER} -eq "1" ]] || [[ ${NUMBER} -eq "one" ]]
+do
+echo $NUMBER
+echo suuccsufully executed and in while statement
+NUMBER=$(($NUMBER + 1))
+echo new  number is $NUMBER
+done
