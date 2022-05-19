@@ -5,12 +5,12 @@ on:
 #--------------1st job---------------------------------1st job---------------------------------1st job---------------------------------1st job---------------------------------1st job---------------------------------1st job---------------------------------1st job---------------------------------1st job-------------------
 
 jobs:
-  Semantic-version:
+  merge:
     runs-on: ubuntu-latest 
     steps:
       - uses: actions/checkout@v2
       - name: merge
         run: |
-          git checkot master
+          git checkout master
           git merge feature-101
           
