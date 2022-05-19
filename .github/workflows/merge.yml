@@ -12,6 +12,7 @@ jobs:
       - name: merge
         run: |
           git pull --all
+          git checkout feature-101
           git checkout master
           git merge feature-101
           
